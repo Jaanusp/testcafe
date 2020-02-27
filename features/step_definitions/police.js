@@ -46,6 +46,30 @@ Then('I am redirected to a booking subpage', async function () {
     await testController.click(PolicePage.Police.subMenuItemLostItems(), name);
  });
 
- Then('I can click on lost persons menu item', async function () {  
-    await testController.click(PolicePage.Police.menuItemLostPersons());
-});          
+ When('I click on Asutus menu item', async function () {  
+       await testController.click(PolicePage.Police.asutusmenu());
+       await testController.click(PolicePage.Police.asutusmenu0());     
+       await testController.click(PolicePage.Police.asutusmenu1());
+       await testController.expect(PolicePage.Police.asutusedTitleHeading().innerText).contains('Politsei- ja Piirivalveamet');
+       await testController.click(PolicePage.Police.asutusmenuStrateegia());
+       await testController.click(PolicePage.Police.asutusmenuJuhtkond());
+       await testController.click(PolicePage.Police.asutusmenuSumboolika());
+       await testController.click(PolicePage.Police.asutusmenuInMemoriam());
+       await testController.click(PolicePage.Police.asutusmenuRahvusvaheline());
+       await testController.click(PolicePage.Police.asutusmenuPalgaandmed());
+       await testController.click(PolicePage.Police.asutusmenuMeediasuhtlus());
+       await testController.click(PolicePage.Police.asutusmenuAjakiri());
+       await testController.click(PolicePage.Police.asutusmenuOrkester());
+       await testController.click(PolicePage.Police.asutusmenuSeotud());
+       await testController.click(PolicePage.Police.asutusmenuAjalugu());
+ });     
+When('I click on Dokumendid ja load menu item', async function () {
+       await testController.click(PolicePage.Police.Dokumendidmenu()); 
+       //await testController.click(PolicePage.Police.Dokumendidmenu0());
+       await testController.click(PolicePage.Police.Dokumendidmenu1());
+       await testController.expect(PolicePage.Police.asutusedTitleHeading().innerText).contains('Isikut tõendavad dokumendid');
+       await testController.click(PolicePage.Police.DokumendidIDkaartT()).wait(8000);
+       await testController.click(PolicePage.Police.DokumendidIDkaartL()).wait(8000);
+       await testController.click(PolicePage.Police.DokumendidPassT()).wait(8000);
+       await testController.click(PolicePage.Police.DokumendidPassL()).wait(8000);
+});  
