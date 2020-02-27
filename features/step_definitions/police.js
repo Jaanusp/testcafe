@@ -62,6 +62,8 @@ Then('I am redirected to a booking subpage', async function () {
        await testController.click(PolicePage.Police.asutusmenuOrkester());
        await testController.click(PolicePage.Police.asutusmenuSeotud());
        await testController.click(PolicePage.Police.asutusmenuAjalugu());
+     
+     
  });     
 When('I click on Dokumendid ja load menu item', async function () {
        await testController.click(PolicePage.Police.Dokumendidmenu()); 
